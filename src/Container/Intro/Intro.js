@@ -9,6 +9,10 @@ import { connect } from 'react-redux';
 import styles from './IntroStyle';
 import { skipIntro } from "../../Redux/Modules/auth";
 
+
+/**
+ * array for react-native-app-intro-slider to make slidable pages
+ */
 const slides = [
     {
         key: 'somethun',
@@ -33,13 +37,18 @@ const slides = [
 ];
 
 class Intro extends React.Component {
-    state = {
-        showRealApp: false
-    };
+
+    /**
+     * propTypes check type of property assigned to the component
+     */
 
     static propTypes = {
         skipIntroConnect: PropTypes.func.isRequired,
     };
+
+    /**
+     * each slideable page is made by _renderItem function
+     */
 
     _renderItem = (item) => {
         return (
@@ -50,14 +59,23 @@ class Intro extends React.Component {
         );
     };
 
+    /**
+     * when you skipp the intor it saves your action so next time in rehydration navigaties to home instead
+     */
+
     _onDone = () => {
         const { skipIntroConnect } = this.props;
         skipIntroConnect();
-    }
+    };
+
     render() {
         return <AppIntroSlider renderItem={this._renderItem} slides={slides} onDone={this._onDone}/>;
     }
 }
+
+/**
+ * skipintor: saves user action so next time app navigate into the home screen instead
+ */
 
 export default connect(state => ({
 

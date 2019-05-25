@@ -1,5 +1,10 @@
 import { NavigationActions, StackActions } from "react-navigation";
 
+/**
+ * high level navigation helper: when app is ready navigator is equaled to app navigator
+ * and you can call some actions form here
+ */
+
 let navigator;
 
 function setTopLevelNavigator(navigatorRef) {

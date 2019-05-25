@@ -7,6 +7,11 @@ import NavigationService from '../Navigator/NavigationService'
 import {  BackHandler, ActivityIndicator } from 'react-native';
 import Sound from 'react-native-sound';
 
+
+/**
+ * initiate the sound
+ */
+
 Sound.setCategory('Playback');
 let whoosh = new Sound('whoosh.m4a', Sound.MAIN_BUNDLE, (error) => {
     if (error) {
@@ -20,12 +25,21 @@ let gotoback = false;
 
 class AppNavigator extends Component {
 
+    /**
+     * when app has been mounted ,  calls the startup action so rehydaration happens and app descides to do  specific actions
+     * anad listens to backbutton press
+     */
+
     componentDidMount() {
         this.props.startup();
         BackHandler.addEventListener("hardwareBackPress", this.onBackPress);
+    };
 
+    /**
+     * if you press backbutton twice whitin more than .5 sconcon it waill navigates between halloffame and welcome screen deponds on which screen you are
+     * if you preess back button twich in less than .5 second app goes to background and play a sound
+     */
 
-    }
     onBackPress = () => {
         if(gotoback){
             whoosh.play((success) => {

@@ -1,6 +1,6 @@
-import { call, put, cps, select, take, delay  } from "redux-saga/effects";
-import { Platform } from "react-native";
-import { NavigationActions, StackActions } from "react-navigation";
+/**
+ * auth reducer checks if user pressed skiped button of intro or not
+ */
 
 
 import NavigationService from "../../Navigator/NavigationService";

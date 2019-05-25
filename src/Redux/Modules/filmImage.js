@@ -1,3 +1,8 @@
+/**
+ * fetch images from api and make new array where third index is sheldon cooper
+ */
+
+
 import { call, put, cps, select, take } from "redux-saga/effects";
 
 export const LOAD = "tipi/film/LOAD";

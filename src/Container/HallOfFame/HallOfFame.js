@@ -1,8 +1,10 @@
+/**
+ * Hall of Fame container render a flat list that shows 5 photos and the third one is always sheldon cooper
+ */
+
 import React from 'react';
 import {
     View,
-    ActivityIndicator,
-    Text,
     FlatList
 } from 'react-native';
 import FastImage from 'react-native-fast-image';
@@ -18,12 +20,20 @@ class HallOfFame extends React.Component {
         fetchListConnect: PropTypes.func.isRequired,
     };
 
+    /**
+     * fetch the new list in componentDidMount, if the array has been changed shows new images
+     */
+
     componentDidMount(): void {
         const { fetchListConnect } = this.props;
         fetchListConnect();
     };
 
+    /**
+     * each item of flat list is shown by fastimage that can caches the images in both android and ios
+     */
     renderImage = (item) => {
+
         return (
             <FastImage
                 style={styles.image}
@@ -41,6 +51,7 @@ class HallOfFame extends React.Component {
         const { list } = this.props;
         return (
             <View style={styles.container}>
+                {/* flat list */}
                 <FlatList
                     data={list}
                     renderItem={(item) => {
@@ -50,6 +61,10 @@ class HallOfFame extends React.Component {
         )
     }
 }
+
+/**
+ * Hall of Fame container render a flat list that shows 5 photos and the third one is always sheldon cooper
+ */
 
 export default connect(state => ({
     list: state.filmImage.result

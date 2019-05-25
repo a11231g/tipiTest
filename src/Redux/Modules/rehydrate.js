@@ -1,3 +1,7 @@
+/**
+ * startup action
+ */
+
 import { call, put, cps, select, take } from "redux-saga/effects";
 import NavigationService from "../../Navigator/NavigationService";
 export const REHYDRATE_SUCCESS = "eventMAster/rehydrate/REHYDRATE_SUCCESS";

@@ -6,7 +6,10 @@ import {
     HallOfFame,
 } from '../Container';
 
-
+/**
+ * app navigator: StackNavigator with 3 screens
+ *
+ */
 
 const NavigationStack = createStackNavigator({
     Intro: {

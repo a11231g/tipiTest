@@ -1,3 +1,7 @@
+/**
+ * saga watcher
+ */
+
 import { all, takeEvery } from "redux-saga/effects";
 import { watchRehydrate, START_REHYDRATE } from "./Modules/rehydrate";
 

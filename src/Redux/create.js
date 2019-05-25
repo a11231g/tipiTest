@@ -1,3 +1,7 @@
+/**
+ * make persist reducer and add saga middleware
+ */
+
 import { createStore, compose, applyMiddleware } from "redux";
 import { persistStore, persistCombineReducers } from "redux-persist";
 import storage from "redux-persist/es/storage";
