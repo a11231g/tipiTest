@@ -11,7 +11,7 @@
     "react": "16.8.3",
     "react-native": "0.59.8",
     "react-native-app-intro-slider": "^2.0.1",
-    "react-native-fast-image": "^6.0.0",
+    "react-native-fast-image": "^8.3.0",
     "react-native-gesture-handler": "^1.2.1",
     "react-native-screens": "^1.0.0-alpha.22",
     "react-native-sound": "^0.10.12",
